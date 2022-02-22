@@ -1,3 +1,4 @@
+// Gathering routes to export to server 
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
