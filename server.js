@@ -38,7 +38,7 @@ app.set('view engine', 'handlebars');
 app.use(session(sess));
 app.use(routes);
 
-// Set listener adn connect db and server
+// Set listener adn connect db and s
 sequelize.sync({ force: false }).then(() => {
 app.listen(PORT, () => { console.log(`Now listening on ${PORT}!`);});
 });
