@@ -80,3 +80,29 @@ router.get('/post/:id', (req, res) => {
 });
 
 // Get login information
+router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect("/");
+      return;
+    }
+  
+    res.render("login");
+});
+
+// Get sign up information 
+
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
+
+// Wrong route
+router.get('*', (res) => {
+    res.status(404).send("Ups wrong route!");
+})
+
+module.exports = router;
