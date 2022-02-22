@@ -8,7 +8,7 @@
 
 ## Description
 
-This project consisted on creating a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. This application will be deployed on Heroku.
+This project consisted on creating an a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This project follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.This application will be deployed on Heroku.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ This project consisted on creating a CMS-style blog site similar to a Wordpress 
 ## Snippets 
 
 * **A**
-```            
+```           
 
 ```   
 * **A**
@@ -28,28 +28,27 @@ This project consisted on creating a CMS-style blog site similar to a Wordpress 
 
 ```  
 * **A**
-```            
-
 ```           
 
+```  
 ## Technologies
 
 * JavaScript
 * Inquirer
-* Sequelize
-* Handlebars.js
 * Express.js
+* Sequelize 
+* Handlebars.js
 * HTML
 * CSS 
 
 ## Preview
 
-This is an image of the tech  blog application on Heroku.  
+This is an image of the tech blog application on Heroku.  
 
 ![Tech blog app](/public/assets/images/preview.png)
 
 ## Links
 
-* [URL of the deployed App in Heroku](https://tech-blog-analuciarojas.herokuapp.com/)
+* [URL of the deployed App in Heroku](https://express-note-taker-analu.herokuapp.com/)
 
-* [URL of the GitHub repository](https://github.com/analuciarojas/MVC-Tech-Blog)
+* [URL of the GitHub repository](https://tech-blog-analuciarojas.herokuapp.com/)
