@@ -5,8 +5,9 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
+    // Check if not empty
     if (username && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user', {
             method: 'post',
             body: JSON.stringify({
                 username,
@@ -15,7 +16,10 @@ async function signupFormHandler(event) {
             headers: {'Content-Type': 'application/json' }
         });
 
-        if (response.ok) { document.location.replace('/dashboard');} 
+        if (response.ok){      
+            alert('Account created!');
+           { document.location.replace('/dashboard');}
+        }
         else { alert(response.statusText);}
     }
 }
