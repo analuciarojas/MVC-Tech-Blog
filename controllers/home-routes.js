@@ -11,6 +11,8 @@ router.get('/',(req,res) => {
             'content',
             'created_at'
         ], 
+        // Recent to latest
+        order: [[ 'created_at', 'DESC']],        
         include: [{
             model: Comment,
             attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -23,7 +25,6 @@ router.get('/',(req,res) => {
             model: User,
             attributes: ['username']
         }
-
     ]
 }).then(dbPostData => {
     const posts = dbPostData.map(post => post.get({ plain: true }));
@@ -35,7 +36,7 @@ router.get('/',(req,res) => {
 });
 });
 
-// Get one post by ID
+// Get single post
 router.get('/post/:id', (req, res) => {
     Post.findOne({
             where: {
@@ -63,15 +64,12 @@ router.get('/post/:id', (req, res) => {
         })
         .then(dbPostData => {
             if (!dbPostData) {
-                res.status(404).json({ message: 'There are no post found with this id' });
+                res.status(404).json({ message: 'There are no posts found with this id' });
                 return;
             }
             const post = dbPostData.get({  plain: true });
             // Give data to template
-            res.render('single-post', {
-                post,
-                loggedIn: req.session.loggedIn
-            });
+            res.render('single-post', {post, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);
@@ -79,7 +77,7 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-// Get login information
+// Get login information and send to login handler
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
       res.redirect("/");
@@ -89,8 +87,7 @@ router.get("/login", (req, res) => {
     res.render("login");
 });
 
-// Get sign up information 
-
+// Get sign up information and send to signup handler
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -100,9 +97,6 @@ router.get('/signup', (req, res) => {
     res.render('signup');
   });
 
-// Wrong route
-router.get('*', (res) => {
-    res.status(404).send("Ups wrong route!");
-})
+
 
 module.exports = router;
