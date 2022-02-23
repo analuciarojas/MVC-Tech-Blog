@@ -1,35 +1,20 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog</title>
-    <link rel="stylesheet" href="public/css/style.css" />
-  </head>
+<section class="new-post-section">
+    <button type="submit" class="btn" id="create-new-post">+ Create new post</button>
+</section>
 
-  <body class="flex-column">
-    <nav class="navbar">
-      <ul class="flex-row">
-        <li class="li-inline nav-item"><a href="/">Home</a></li>
-        <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-        <li class="li-inline nav-item"><a
-            href="#"
-            id="logout-link"
-          >Logout</a></li>
-      </ul>
-    </nav>
-    <header class="hero">
-      <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-    </header>
 
-    <main class="col-auto">
-      {{{body}}}
-    </main>
+{{#if posts.length}}
+<section>
+    <h2>Your Dashboard</h2>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}">Edit post</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
 
-    <footer class="footer">
-      <a href="/dashboard/new">➕ New Post</a>
-    </footer>
-  </body>
-
-  <script src="public/js/logout.js"></script>
-
-</html>
+<script src="/public/js/create.js"></script>
