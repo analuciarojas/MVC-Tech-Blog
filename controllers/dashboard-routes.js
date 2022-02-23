@@ -3,8 +3,8 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Get dashboard page
-router.get('/', (req, res) => {
+// Get dashboard page only for logged in user 
+router.get('/', withAuth,(req, res) => {
 Post.findAll({
     where: {
         user_id: req.session.user_id
@@ -39,8 +39,8 @@ Post.findAll({
     });
 });
 
-// Route to edit post
-router.get('/edit/:id', (req, res) => {
+// Route to edit a post
+router.get('/edit/:id', withAuth,(req, res) => {
     Post.findOne({
     where: {
         id: req.params.id
@@ -67,7 +67,7 @@ router.get('/edit/:id', (req, res) => {
 })
 .then(dbPostData => {
     if (!dbPostData) {
-        res.status(404).json({ message: 'There is no post with this ID'});
+        res.status(404).json({ message: 'There are no posts with this ID'});
         return;
     }
     const post = dbPostData.get({ plain: true });
@@ -81,7 +81,7 @@ router.get('/edit/:id', (req, res) => {
 
 // Get add new post
 router.get('/new', (req, res) => {
-    res.render('add-post', {
+    res.render('new-post', {
         loggedIn: true
     })
 })
