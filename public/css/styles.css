@@ -2,13 +2,19 @@
     box-sizing: border-box;
     
 }
+a:hover{
+    text-decoration: none !important;
+}
 
 .nav-item a{ 
     padding:0 40px;
     font-size: 20px;
     color:white;
     font-family: 'Open Sans', sans-serif;
+}
 
+.nav-item a:hover{
+    color: rgb(245, 245, 227)!important;
 }
 
 .nav-item{
@@ -21,7 +27,6 @@
 }
 
 h2 a{
-  font-weight: 800;
   margin: 0;
   color: rgb(245, 245, 227);
   line-height: 1.25;
@@ -37,25 +42,29 @@ h2 a{
     font-family:Raleway;
 }
 
+.title a:hover{
+    color:rgb(66, 44, 44);
+}
+
 h1 a{
     color:rgb(66, 44, 44);
 }
 
-.col {
+.col, .form-section {
     flex-grow: 1;
     background-color:rgb(245, 245, 227) ;
 }
 
 main {
-    margin: 20px auto;
-    width: 94%;
+    margin: 20px auto !important;
+    width: 94%!important;
     background-color:rgb(245, 245, 227) ;
 }
 
-.post{
-    margin: 0 0 20px 0;
-    border: 3px solid rgb(66, 44, 44);
-    border-radius: .3rem;
+.post, .card{
+    margin: 0 0 20px 0 !important;
+    border: 3px solid rgb(66, 44, 44) !important;
+    border-radius: .3rem !important;
 }
 
 article{
@@ -63,23 +72,23 @@ article{
 }
 
 ul {
-    list-style-type: disc;
+    list-style-type: none;
 }
 
-#card-header{
-    color:rgb(245, 245, 227) ;
-    background-color: rgb(66, 44, 44);
-    padding: 1%;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
+.card-header{
+    color:rgb(245, 245, 227)!important ;
+    background-color: rgb(66, 44, 44)!important;
+    padding: 1%!important;
+    justify-content: space-between!important;
+    display: flex!important;
+    flex-wrap: wrap!important;
 
 }
 
-#links{
-    font-family:Raleway;
-    color:rgb(245, 245, 227) ;
-    font-size: 22px;
+.links{
+    font-family:Raleway!important;
+    color:rgb(245, 245, 227) !important;
+    font-size: 22px!important;
 }
 
 .justify-space-between {
@@ -96,8 +105,27 @@ ul {
     font-size: 15px;
 }
 
-.content-section p{
-    padding: 1%;
+.content-section p, .form-section{
+    padding: 2%;
     margin:0;
     font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    width: 100%;
+    border: 2px solid #ccc;
+    background: rgb(245, 245, 227);
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+.btn {
+    font-size: 15px!important;
+    margin-right: 20px;
+    display: block!important;
+    color:rgb(245, 245, 227)!important;
+    border: none!important;
+    background-color: rgb(66, 44, 44)!important;
+    box-shadow: 4px 4px rgb(199, 171, 140)!important;
+    align-items: center;
 }

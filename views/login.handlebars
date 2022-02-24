@@ -1,24 +1,30 @@
-    <div class="card">
+    <div class="card post">
     <div class="card-header">
-        <h2>Login</h2>
+        <h2 class="links">Login</h2>
     </div>
     <div class="form-section" id="login">
         <form class="login-form" class="card-body">
             <div>
                 <label for="username-login">Username</label>
+            </div>
+            <div>
                 <input type="text" class="entry-field" id="username-login" />
             </div>
             <div>
                 <label for="password-login">Password</label>
+             </div>
+            <div>
                 <input type="password" class="entry-field" id="password-login" />
             </div>
-            <div>
-                <button type="submit" class="login-signup-btn">Log In!</button>
-            </div>
         </form>
+    <div class="navbar justify-content-center">
+    <div class="flex-row">
+    <button type="submit" class="btn nav-item">Log In!</button>
+    <a href="/signup" class="btn nav-item">Sign Up!</a>
+    </div>
+    </div>
     </div>
 
-    <a href="/signup" class="sign-in-link">Sign Up</a>
 </section>
 
 <script src="/js/login.js"></script>
