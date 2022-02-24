@@ -1,0 +1,15 @@
+    
+    <h2 class="title2">Comments</h2>
+
+    {{#each this}}
+    <article class="post">
+    <div class="card-header">
+            <div class="links">{{user.username}}</div>
+            <div id="posted">Posted by <b>{{user.username}} </b> on <b>{{formatDate created_at}}</b></div>
+    </div>
+    <div class="content-section">
+        <p> {{comment_text}}</p>
+    </div>
+    </article>
+    
+    {{/each}}

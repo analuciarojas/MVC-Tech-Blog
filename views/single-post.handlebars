@@ -1,14 +1,18 @@
-{{> content post}}
+<a href="/dashboard" class="title2"> &larr; Back to dashboard</a>
+<br>
+<br>
+
+{{> post-info post}}
 
 {{#if loggedIn}}
 <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+    <div>
+        <textarea placeholder="Write a comment here..." name="comment-body"></textarea>
+    </div>
 
-  <div>
-    <button type="submit">Add comment</button>
-  </div>
+    <div>
+        <button class="btn" type="submit">Add comment</button>
+    </div>
 </form>
 {{/if}}
 
