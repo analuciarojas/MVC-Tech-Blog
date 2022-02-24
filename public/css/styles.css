@@ -42,6 +42,16 @@ h2 a{
     font-family:Raleway;
 }
 
+.title2{
+    font-size: 3rem;
+    background-color: rgb(245, 245, 227);
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: .3rem;
+    font-family:Raleway;
+    color:rgb(66, 44, 44);
+}
+
 .title a:hover{
     color:rgb(66, 44, 44);
 }
@@ -57,7 +67,7 @@ h1 a{
 
 main {
     margin: 20px auto !important;
-    width: 94%!important;
+    width: 90%!important;
     background-color:rgb(245, 245, 227) ;
 }
 

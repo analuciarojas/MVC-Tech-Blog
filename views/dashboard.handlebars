@@ -1,8 +1,8 @@
-<section class="row">
-  <div class = "column">
-    <h2>Create New Post</h2>
-
-    <form class="new-post-form">
+<div class="card post">
+  <div class = "card-header">
+    <h2 class="links">Create New Post</h2>
+  </div>
+    <form class="new-post-form form-section">
       <div>
         <label for="post-title">Title</label>
         <input type="text" id="post-title" name="post-title" />
@@ -11,17 +11,20 @@
         <label for="content">Text</label>
         <input id="content" name="content"></input>
       </div>
+      <div class="navbar justify-content-center">
+    <div class="flex-row">
       <button type="submit" class="btn">Create</button>
+      </div>
+      </div>
     </form>
-  </div>
-</section>
+</div>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Dashboard</h2>
+  <h2 class="title2">Your Dashboard</h2>
     {{#each posts as |post|}}
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link btn" style="width: 15%; margin-bottom: 20px;">Edit post</a>
     {{/each}}
 </section>
 {{/if}}
