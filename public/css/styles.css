@@ -52,7 +52,7 @@ h2 a{
     color:rgb(66, 44, 44);
 }
 
-.title a:hover{
+.title a:hover, .title2:hover{
     color:rgb(66, 44, 44);
 }
 
@@ -121,7 +121,7 @@ ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-input {
+input, textarea {
     width: 100%;
     border: 2px solid #ccc;
     background: rgb(245, 245, 227);
