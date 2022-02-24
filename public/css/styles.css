@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+.nav-item a{ 
+    padding:0 40px;
+    font-size: 20px;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.nav-item{
+    padding-top:10px;
+}
+
+.hero{
+    background-color: rgb(66, 44, 44);
+    padding: 1.5% 4%;
+}
+
+h2 a{
+  font-weight: 800;
+  margin: 0;
+  color: rgb(245, 245, 227);
+  line-height: 1.25;
+}
+
+.title{
+    font-size: 3rem;
+    background-color: rgb(245, 245, 227);
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: .3rem;
+    box-shadow: 6px 5px rgb(199, 171, 140);
+    font-family:Raleway;
+}
+
+h1 a{
+    color:rgb(66, 44, 44);
+}
+
+.col {
+    flex-grow: 1;
+    background-color:rgb(245, 245, 227) ;
+}
+
+main {
+    margin: 20px auto;
+    width: 94%;
+    background-color:rgb(245, 245, 227) ;
+}
+
+.post{
+    margin: 0 0 20px 0;
+    border: 3px solid rgb(66, 44, 44);
+    border-radius: .3rem;
+}
+
+article{
+    display: block;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+#card-header{
+    color:rgb(245, 245, 227) ;
+    background-color: rgb(66, 44, 44);
+    padding: 1%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#links{
+    font-family:Raleway;
+    color:rgb(245, 245, 227) ;
+    font-size: 22px;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#posted{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.content-section p{
+    padding: 1%;
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+}
