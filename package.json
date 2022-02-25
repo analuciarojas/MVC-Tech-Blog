@@ -32,6 +32,8 @@
     "mysql2": "^2.3.3",
     "path": "^0.12.7",
     "sequelize": "^6.16.2",
-    "validate": "^5.2.0"
+    "validate": "^5.2.0",
+    "node": "^17.3.1",
+    "node.js": "^0.0.1-security"
   }
 }
