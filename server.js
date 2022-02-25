@@ -13,7 +13,7 @@ const hbs = exphbs.create({ helpers });
 
 // Initialize sessions
 const sess = {
-    secret: process.env.DB_SECRET,
+    secret: 'secreto',
     cookie: { maxAge: 36000 },
     resave: false,
     saveUninitialized: true,
@@ -36,7 +36,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(session(sess));
-app.use(session({ secret: process.env.DB_SECRET }));
 app.use(routes);
 
 // Set listener adn connect db and s
