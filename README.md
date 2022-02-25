@@ -1,10 +1,10 @@
 # MVC Tech Blog 
 
-![JavaScript](https://img.shields.io/badge/JavaScript-65.9%20%25-yellow)
+![JavaScript](https://img.shields.io/badge/JavaScript-72.7%20%25-yellow)
 
-![HTML](https://img.shields.io/badge/HTML-23.2%20%25-orange)
+![Handlebars](https://img.shields.io/badge/Handlebars-20.4%20%25-orange)
 
-![CSS](https://img.shields.io/badge/CSS-10.9%20%25-purple)
+![CSS](https://img.shields.io/badge/CSS-6.9%20%25-purple)
 
 ## Description
 
@@ -19,17 +19,86 @@ This project consisted on creating an a CMS-style blog site similar to a Wordpre
 
 ## Snippets 
 
-* **A**
+* **Get all post from homepage**
 ```           
-
+router.get('/',(req,res) => {
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'content',
+            'created_at'
+        ], 
+        // Recent to latest
+        order: [[ 'created_at', 'DESC']],        
+        include: [{
+            model: Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
+        },
+        {
+            model: User,
+            attributes: ['username']
+        }
+    ]
 ```   
-* **A**
+* **Post model**
 ```           
-
+Post.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                // Validate title at least 1 character long
+                len: [1]
+            }
+        },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                // Validate post at least 1 character long
+                len: [1]
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
+    }
 ```  
-* **A**
+* **Delete post form handler**
 ```           
-
+async function deleteFormHandler(event) {
+    event.preventDefault();
+    // Get ID
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+        ];
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE'
+      });
+    if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert(response.statusText);
+      }
+  }
+  
+  document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
 ```  
 ## Technologies
 
@@ -45,10 +114,10 @@ This project consisted on creating an a CMS-style blog site similar to a Wordpre
 
 This is an image of the tech blog application on Heroku.  
 
-![Tech blog app](/public/assets/images/preview.png)
+![Tech blog app](/public/images/preview.png)
 
 ## Links
 
-* [URL of the deployed App in Heroku](https://express-note-taker-analu.herokuapp.com/)
+* [URL of the deployed App in Heroku](https://tech-blog-analu.herokuapp.com/)
 
-* [URL of the GitHub repository](https://tech-blog-analuciarojas.herokuapp.com/)
+* [URL of the GitHub repository](https://github.com/analuciarojas/MVC-Tech-Blog)
